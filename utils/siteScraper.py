@@ -27,5 +27,5 @@ def main(gameweek):
             j+=1
         i+=1
 if __name__ == "__main__":
-    gameweek = 1
+    gameweek = 2
     main(gameweek)
