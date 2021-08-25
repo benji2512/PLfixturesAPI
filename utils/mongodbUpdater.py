@@ -1,4 +1,5 @@
-import requests
+import requests, os
+from dotenv import load_dotenv
 from pymongo import MongoClient
 from datetime import datetime
 
@@ -8,7 +9,9 @@ from datetime import datetime
 # matches: [ match1: team_h v team_a ]
 
 def main():
-    client = MongoClient("mongodb+srv://benthedev:B3n4i%402516@cluster0.50ibf.mongodb.net/PLFixtures?retryWrites=true&w=majority")
+    load_dotenv()
+    mongodburi = os.getenv("MONGODBURI")
+    client = MongoClient(mongodburi)
     db = client.PLFixtures
     db.Gameweeks.drop()
     teams = {1:"Arsenal", 2:"Aston Villa", 3:"Brentford", 4:"Brighton and Hove Albion", 5:"Burnley", 6:"Chelsea", 7:"Crystal Palace", 8:"Everton", 9:"Leicester City", 10:"Leeds United", 11:"Liverpool", 12:"Manchester City", 13:"Manchester United", 14:"Newcastle United", 15:"Norwich City", 16:"Southampton", 17:"Tottenham Hotspur", 18:"Watford", 19:"West Ham United", 20:"Wolverhampton Wanderers"}

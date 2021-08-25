@@ -1,9 +1,12 @@
-import requests
+import requests, os
+from dotenv import load_dotenv
 from pymongo import MongoClient
 from pprint import pprint
 
 def main():
-    client = MongoClient("mongodb+srv://benthedev:B3n4i%402516@cluster0.50ibf.mongodb.net/PLFixtures?retryWrites=true&w=majority")
+    load_dotenv()
+    mongodburi = os.getenv("MONGODBURI")
+    client = MongoClient(mongodburi)
     db = client.PLFixtures
 
     cursor = db.Gameweeks.find({"match":"Manchester United vs Chelsea"})
