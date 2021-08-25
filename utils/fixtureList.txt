@@ -1,0 +1,456 @@
+Gameweek 1
+Brentford vs Arsenal
+Manchester United vs Leicester City
+Burnley vs Brighton and Hove Albion
+Chelsea vs Crystal Palace
+Everton vs Southampton
+Leeds United vs Wolverhampton Wanderers
+Watford vs Aston Villa
+Norwich City vs Liverpool
+Newcastle United vs West Ham United
+Tottenham Hotspur vs Manchester City
+----------
+Gameweek 2
+Liverpool vs Burnley
+Aston Villa vs Newcastle United
+Crystal Palace vs Brentford
+Leicester City vs Everton
+Manchester City vs Norwich City
+Brighton and Hove Albion vs Watford
+Southampton vs Manchester United
+Wolverhampton Wanderers vs Tottenham Hotspur
+Arsenal vs Chelsea
+West Ham United vs Leeds United
+----------
+Gameweek 3
+Manchester City vs Arsenal
+Aston Villa vs Brentford
+Brighton and Hove Albion vs Everton
+Newcastle United vs Southampton
+Norwich City vs Leeds United
+West Ham United vs Crystal Palace
+Liverpool vs Chelsea
+Burnley vs Leicester City
+Tottenham Hotspur vs Watford
+Wolverhampton Wanderers vs Manchester United
+----------
+Gameweek 4
+Crystal Palace vs Tottenham Hotspur
+Arsenal vs Norwich City
+Brentford vs Brighton and Hove Albion
+Leeds United vs Manchester City
+Manchester United vs Newcastle United
+Southampton vs West Ham United
+Watford vs Wolverhampton Wanderers
+Chelsea vs Aston Villa
+Leicester City vs Liverpool
+Everton vs Burnley
+----------
+Gameweek 5
+Newcastle United vs Leicester City
+Wolverhampton Wanderers vs Brentford
+Burnley vs Arsenal
+Liverpool vs Crystal Palace
+Manchester City vs Southampton
+Norwich City vs Watford
+Aston Villa vs Everton
+Brighton and Hove Albion vs Leeds United
+West Ham United vs Manchester United
+Tottenham Hotspur vs Chelsea
+----------
+Gameweek 6
+Chelsea vs Manchester City
+Everton vs Norwich City
+Leicester City vs West Ham United
+Leeds United vs Burnley
+Manchester United vs Aston Villa
+Watford vs Newcastle United
+Brentford vs Liverpool
+Southampton vs Wolverhampton Wanderers
+Arsenal vs Tottenham Hotspur
+Crystal Palace vs Brighton and Hove Albion
+----------
+Gameweek 7
+Brighton and Hove Albion vs Arsenal
+Burnley vs Norwich City
+Chelsea vs Southampton
+Crystal Palace vs Leeds United
+Leicester City vs Watford
+Liverpool vs Manchester City
+Manchester United vs Everton
+Tottenham Hotspur vs Aston Villa
+West Ham United vs Brentford
+Wolverhampton Wanderers vs Newcastle United
+----------
+Gameweek 8
+Arsenal vs Crystal Palace
+Aston Villa vs Wolverhampton Wanderers
+Brentford vs Chelsea
+Everton vs West Ham United
+Leeds United vs Manchester United
+Manchester City vs Burnley
+Newcastle United vs Tottenham Hotspur
+Norwich City vs Brighton and Hove Albion
+Southampton vs Leicester City
+Watford vs Liverpool
+----------
+Gameweek 9
+Arsenal vs Aston Villa
+Brentford vs Leeds United
+Brighton and Hove Albion vs Manchester City
+Chelsea vs Norwich City
+Crystal Palace vs Newcastle United
+Everton vs Watford
+Leicester City vs Wolverhampton Wanderers
+Manchester United vs Liverpool
+Southampton vs Burnley
+West Ham United vs Tottenham Hotspur
+----------
+Gameweek 10
+Aston Villa vs West Ham United
+Burnley vs Brentford
+Leeds United vs Arsenal
+Liverpool vs Brighton and Hove Albion
+Manchester City vs Crystal Palace
+Newcastle United vs Chelsea
+Norwich City vs Leicester City
+Tottenham Hotspur vs Manchester United
+Watford vs Southampton
+Wolverhampton Wanderers vs Everton
+----------
+Gameweek 11
+Arsenal vs Watford
+Brentford vs Norwich City
+Brighton and Hove Albion vs Newcastle United
+Chelsea vs Burnley
+Crystal Palace vs Wolverhampton Wanderers
+Everton vs Tottenham Hotspur
+Leicester City vs Leeds United
+Manchester United vs Manchester City
+Southampton vs Aston Villa
+West Ham United vs Liverpool
+----------
+Gameweek 12
+Aston Villa vs Brighton and Hove Albion
+Burnley vs Crystal Palace
+Leeds United vs Chelsea
+Liverpool vs Arsenal
+Manchester City vs Everton
+Newcastle United vs Brentford
+Norwich City vs Southampton
+Tottenham Hotspur vs Leicester City
+Watford vs Manchester United
+Wolverhampton Wanderers vs West Ham United
+----------
+Gameweek 13
+Arsenal vs Newcastle United
+Brentford vs Everton
+Brighton and Hove Albion vs Leicester City
+Burnley vs Tottenham Hotspur
+Chelsea vs Manchester United
+Crystal Palace vs Aston Villa
+Leeds United vs Watford
+Liverpool vs Southampton
+Manchester City vs West Ham United
+Norwich City vs Wolverhampton Wanderers
+----------
+Gameweek 14
+Aston Villa vs Manchester City
+Everton vs Liverpool
+Leicester City vs Crystal Palace
+Watford vs Chelsea
+West Ham United vs Brighton and Hove Albion
+Wolverhampton Wanderers vs Burnley
+Manchester United vs Arsenal
+Newcastle United vs Norwich City
+Southampton vs Leeds United
+Tottenham Hotspur vs Brentford
+----------
+Gameweek 15
+Aston Villa vs Leeds United
+Everton vs Arsenal
+Leicester City vs Brentford
+Manchester United vs Crystal Palace
+Newcastle United vs Burnley
+Southampton vs Brighton and Hove Albion
+Tottenham Hotspur vs Norwich City
+Watford vs Manchester City
+West Ham United vs Chelsea
+Wolverhampton Wanderers vs Liverpool
+----------
+Gameweek 16
+Arsenal vs Southampton
+Brentford vs Watford
+Brighton and Hove Albion vs Tottenham Hotspur
+Burnley vs West Ham United
+Chelsea vs Leicester City
+Crystal Palace vs Everton
+Leeds United vs Newcastle United
+Liverpool vs Aston Villa
+Manchester City vs Wolverhampton Wanderers
+Norwich City vs Manchester United
+----------
+Gameweek 17
+Arsenal vs West Ham United
+Brentford vs Manchester United
+Brighton and Hove Albion vs Wolverhampton Wanderers
+Burnley vs Watford
+Leeds United vs Tottenham Hotspur
+Norwich City vs Aston Villa
+Crystal Palace vs Southampton
+Chelsea vs Everton
+Liverpool vs Newcastle United
+Manchester City vs Leicester City
+----------
+Gameweek 18
+Aston Villa vs Burnley
+Everton vs Leeds United
+Leicester City vs Arsenal
+Manchester United vs Brighton and Hove Albion
+Newcastle United vs Manchester City
+Southampton vs Brentford
+Tottenham Hotspur vs Liverpool
+Watford vs Crystal Palace
+West Ham United vs Norwich City
+Wolverhampton Wanderers vs Chelsea
+----------
+Gameweek 19
+Aston Villa vs Chelsea
+Brighton and Hove Albion vs Brentford
+Burnley vs Everton
+Liverpool vs Leicester City
+Manchester City vs Leeds United
+Newcastle United vs Manchester United
+Norwich City vs Arsenal
+Tottenham Hotspur vs Crystal Palace
+West Ham United vs Southampton
+Wolverhampton Wanderers vs Watford
+----------
+Gameweek 20
+Arsenal vs Wolverhampton Wanderers
+Brentford vs Manchester City
+Chelsea vs Brighton and Hove Albion
+Crystal Palace vs Norwich City
+Everton vs Newcastle United
+Leicester City vs Aston Villa
+Leeds United vs Liverpool
+Manchester United vs Burnley
+Southampton vs Tottenham Hotspur
+Watford vs West Ham United
+----------
+Gameweek 21
+Arsenal vs Manchester City
+Brentford vs Aston Villa
+Chelsea vs Liverpool
+Crystal Palace vs West Ham United
+Everton vs Brighton and Hove Albion
+Leicester City vs Burnley
+Leeds United vs Norwich City
+Manchester United vs Wolverhampton Wanderers
+Southampton vs Newcastle United
+Watford vs Tottenham Hotspur
+----------
+Gameweek 22
+Aston Villa vs Manchester United
+Brighton and Hove Albion vs Crystal Palace
+Burnley vs Leeds United
+Liverpool vs Brentford
+Manchester City vs Chelsea
+Newcastle United vs Watford
+Norwich City vs Everton
+Tottenham Hotspur vs Arsenal
+West Ham United vs Leicester City
+Wolverhampton Wanderers vs Southampton
+----------
+Gameweek 23
+Arsenal vs Burnley
+Brentford vs Wolverhampton Wanderers
+Chelsea vs Tottenham Hotspur
+Crystal Palace vs Liverpool
+Everton vs Aston Villa
+Leicester City vs Newcastle United
+Leeds United vs Brighton and Hove Albion
+Manchester United vs West Ham United
+Southampton vs Manchester City
+Watford vs Norwich City
+----------
+Gameweek 24
+Aston Villa vs Leicester City
+Brighton and Hove Albion vs Chelsea
+Burnley vs Manchester United
+Norwich City vs Crystal Palace
+West Ham United vs Watford
+Wolverhampton Wanderers vs Arsenal
+Newcastle United vs Everton
+Tottenham Hotspur vs Southampton
+Liverpool vs Leeds United
+Manchester City vs Brentford
+----------
+Gameweek 25
+Brentford vs Crystal Palace
+Burnley vs Liverpool
+Chelsea vs Arsenal
+Everton vs Leicester City
+Leeds United vs West Ham United
+Manchester United vs Southampton
+Newcastle United vs Aston Villa
+Norwich City vs Manchester City
+Tottenham Hotspur vs Wolverhampton Wanderers
+Watford vs Brighton and Hove Albion
+----------
+Gameweek 26
+Arsenal vs Brentford
+Aston Villa vs Watford
+Brighton and Hove Albion vs Burnley
+Crystal Palace vs Chelsea
+Leicester City vs Manchester United
+Liverpool vs Norwich City
+Manchester City vs Tottenham Hotspur
+Southampton vs Everton
+West Ham United vs Newcastle United
+Wolverhampton Wanderers vs Leeds United
+----------
+Gameweek 27
+Arsenal vs Liverpool
+Brentford vs Newcastle United
+Brighton and Hove Albion vs Aston Villa
+Chelsea vs Leeds United
+Crystal Palace vs Burnley
+Everton vs Manchester City
+Leicester City vs Tottenham Hotspur
+Manchester United vs Watford
+Southampton vs Norwich City
+West Ham United vs Wolverhampton Wanderers
+----------
+Gameweek 28
+Aston Villa vs Southampton
+Burnley vs Chelsea
+Leeds United vs Leicester City
+Liverpool vs West Ham United
+Manchester City vs Manchester United
+Newcastle United vs Brighton and Hove Albion
+Norwich City vs Brentford
+Tottenham Hotspur vs Everton
+Watford vs Arsenal
+Wolverhampton Wanderers vs Crystal Palace
+----------
+Gameweek 29
+Arsenal vs Leeds United
+Brentford vs Burnley
+Brighton and Hove Albion vs Liverpool
+Chelsea vs Newcastle United
+Crystal Palace vs Manchester City
+Everton vs Wolverhampton Wanderers
+Leicester City vs Norwich City
+Manchester United vs Tottenham Hotspur
+Southampton vs Watford
+West Ham United vs Aston Villa
+----------
+Gameweek 30
+Aston Villa vs Arsenal
+Burnley vs Southampton
+Leeds United vs Brentford
+Liverpool vs Manchester United
+Manchester City vs Brighton and Hove Albion
+Newcastle United vs Crystal Palace
+Norwich City vs Chelsea
+Tottenham Hotspur vs West Ham United
+Watford vs Everton
+Wolverhampton Wanderers vs Leicester City
+----------
+Gameweek 31
+Brighton and Hove Albion vs Norwich City
+Burnley vs Manchester City
+Chelsea vs Brentford
+Crystal Palace vs Arsenal
+Leicester City vs Southampton
+Liverpool vs Watford
+Manchester United vs Leeds United
+Tottenham Hotspur vs Newcastle United
+West Ham United vs Everton
+Wolverhampton Wanderers vs Aston Villa
+----------
+Gameweek 32
+Arsenal vs Brighton and Hove Albion
+Aston Villa vs Tottenham Hotspur
+Brentford vs West Ham United
+Everton vs Manchester United
+Leeds United vs Crystal Palace
+Manchester City vs Liverpool
+Newcastle United vs Wolverhampton Wanderers
+Norwich City vs Burnley
+Southampton vs Chelsea
+Watford vs Leicester City
+----------
+Gameweek 33
+Aston Villa vs Liverpool
+Everton vs Crystal Palace
+Leicester City vs Chelsea
+Manchester United vs Norwich City
+Newcastle United vs Leeds United
+Southampton vs Arsenal
+Tottenham Hotspur vs Brighton and Hove Albion
+Watford vs Brentford
+West Ham United vs Burnley
+Wolverhampton Wanderers vs Manchester City
+----------
+Gameweek 34
+Arsenal vs Manchester United
+Brentford vs Tottenham Hotspur
+Brighton and Hove Albion vs Southampton
+Burnley vs Wolverhampton Wanderers
+Chelsea vs West Ham United
+Crystal Palace vs Leicester City
+Leeds United vs Aston Villa
+Liverpool vs Everton
+Manchester City vs Watford
+Norwich City vs Newcastle United
+----------
+Gameweek 35
+Aston Villa vs Norwich City
+Everton vs Chelsea
+Leicester City vs Manchester City
+Manchester United vs Brentford
+Newcastle United vs Liverpool
+Southampton vs Crystal Palace
+Tottenham Hotspur vs Leeds United
+Watford vs Burnley
+West Ham United vs Arsenal
+Wolverhampton Wanderers vs Brighton and Hove Albion
+----------
+Gameweek 36
+Arsenal vs Leicester City
+Brentford vs Southampton
+Brighton and Hove Albion vs Manchester United
+Burnley vs Aston Villa
+Chelsea vs Wolverhampton Wanderers
+Crystal Palace vs Watford
+Leeds United vs Everton
+Liverpool vs Tottenham Hotspur
+Manchester City vs Newcastle United
+Norwich City vs West Ham United
+----------
+Gameweek 37
+Aston Villa vs Crystal Palace
+Everton vs Brentford
+Leicester City vs Brighton and Hove Albion
+Manchester United vs Chelsea
+Newcastle United vs Arsenal
+Southampton vs Liverpool
+Tottenham Hotspur vs Burnley
+Watford vs Leeds United
+West Ham United vs Manchester City
+Wolverhampton Wanderers vs Norwich City
+----------
+Gameweek 38
+Arsenal vs Everton
+Brentford vs Leicester City
+Brighton and Hove Albion vs West Ham United
+Burnley vs Newcastle United
+Chelsea vs Watford
+Crystal Palace vs Manchester United
+Leeds United vs Southampton
+Liverpool vs Wolverhampton Wanderers
+Manchester City vs Aston Villa
+Norwich City vs Tottenham Hotspur
+----------
