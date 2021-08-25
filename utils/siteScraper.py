@@ -25,7 +25,6 @@ def main(gameweek):
             print(game)
         i+=1
 if __name__ == "__main__":
-<<<<<<< HEAD
     gw = 1
     while gw < 39:
         gameweek = gw
@@ -34,7 +33,3 @@ if __name__ == "__main__":
         print("----------")
         gw += 1
 
-=======
-    gameweek = 2
-    main(gameweek)
->>>>>>> 4ea4908926e4eb80f556183e86404d484d0f6f87
