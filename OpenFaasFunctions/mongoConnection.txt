@@ -1,0 +1,1 @@
+MONGODBURI="mongodb+srv://benthedev:B3n4i%402516@cluster0.50ibf.mongodb.net/PLFixtures?retryWrites=true&w=majority"

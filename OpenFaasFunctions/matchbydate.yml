@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: https://openfaas.benjimanclarke.tech
+functions:
+  matchbydate:
+    lang: python3
+    handler: ./matchbydate
+    image: benthedev/matchbydate
+
