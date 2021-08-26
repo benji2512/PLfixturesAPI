@@ -7,9 +7,7 @@ It will be built using:
 - Python as the main language  
   
 It will be built over time and I will update the below checklist according to the progress being made and the newer additions I think up.  
-- [ ] Populate MongoDB with per-team fixture information :thinking:
-  -  Automating it obviously
-  - [ ] Clean up returned data into a per-team basis in MongoDB styling
-  - [ ] Write script to push gathered information to MongoDB
-- [ ] Setup CI workflow for data comparison :partying_face:
-  - [ ] Choose a provider
+TODO list is stored on Joplin for the time being. I will update that regularly and put latest overalls HERE :partying_face:  
+
+Latest Overall Update 26/08/21:  
+I have one function live on OpenFaaS and will create a simple react app for the api call test to that. Building on function at a time to make sure I have a correct flow.
