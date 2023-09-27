@@ -21,7 +21,7 @@ def nextMatch_calc(kickoff_time):
         return 1
 
 def main(team):
-    teams = {1:"Arsenal", 2:"Aston Villa", 3:"Brentford", 4:"Brighton and Hove Albion", 5:"Burnley", 6:"Chelsea", 7:"Crystal Palace", 8:"Everton", 9:"Leeds United", 10:"Leicester City", 11:"Liverpool", 12:"Manchester City", 13:"Manchester United", 14:"Newcastle United", 15:"Norwich City", 16:"Southampton", 17:"Tottenham Hotspur", 18:"Watford", 19:"West Ham United", 20:"Wolverhampton Wanderers"}
+    teams = {1:"Arsenal", 2:"Aston Villa", 3:"Bournemouth", 4:"Brentford", 5:"Brighton and Hove Albion", 6:"Burnley", 7:"Chelsea", 8:"Crystal Palace", 9:"Everton", 10:"Fulham", 11:"Liverpool", 12:"Luton Town", 13:"Manchester City", 14:"Manchester United", 15:"Newcastle United", 16:"Nottingham Forest", 17:"Sheffield United", 18:"Tottenham Hotspur", 19:"West Ham United", 20:"Wolverhampton Wanderers"}
     res = requests.get("https://fantasy.premierleague.com/api/fixtures/")
     result = res.json()
 
