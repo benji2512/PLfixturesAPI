@@ -1,31 +1,62 @@
-import requests, datetime
 
-def main(gameweek):
-    teams = {1:"Arsenal", 2:"Aston Villa", 3:"Brentford", 4:"Brighton and Hove Albion", 5:"Burnley", 6:"Chelsea", 7:"Crystal Palace", 8:"Everton", 9:"Leeds United", 10:"Leicester City", 11:"Liverpool", 12:"Manchester City", 13:"Manchester United", 14:"Newcastle United", 15:"Norwich City", 16:"Southampton", 17:"Tottenham Hotspur", 18:"Watford", 19:"West Ham United", 20:"Wolverhampton Wanderers"}
-    res = requests.get("https://fantasy.premierleague.com/api/fixtures/")
-    result = res.json()
-    i = 0
-    j = 0
-    while i < len(result):
-        if result[i]["event"] == gameweek:
-            team_a = result[i]["team_a"]
-            team_h = result[i]["team_h"]
-            kickoffDateTime = result[i]["kickoff_time"]
-            kickoffDateTime = datetime.datetime.fromisoformat(kickoffDateTime[:-1])
-            kickoffDate = "{0}-{1}-{2}".format(kickoffDateTime.day, kickoffDateTime.month, kickoffDateTime.year)
-            kickoffTime2 = kickoffDateTime.time()
-            if team_a in teams.keys():
-                away = team_a
+import re,requests, datetime
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+#from pymongo import MongoClient
+#from pymongo.server_api import ServerApi
+
+def scrapeContent():
+    url = "https://www.skysports.com/premier-league-fixtures" # use https://www.skysports.com/manchester-united-fixtures for just United games
+    page = urlopen(url)
+    html_bytes = page.read()
+    html = html_bytes.decode("utf-8")
+    soup = BeautifulSoup(html, "html.parser")
+    return soup
+
+def gameBreakdown(html):
+    # dict object : {"date": list of fixtures}
+    # progression to team based db
+    # mongouri = "mongodb+srv://plfixturesdb.l3h7281.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority"
+    # client = MongoClient(mongouri,
+    #                  tls=True,
+    #                  tlsCertificateKeyFile='../X509-cert-5032269924842152828.pem',
+    #                  server_api=ServerApi('1'))
+    # fixturesdb = client["fixturesdb"]
+    # allfixtures = fixturesdb["allfixtures"]
+    # mongodict = {}
+    # {x: x**2 for x in (2, 4, 6)} <- example of dictionary comprehension3
+    gameDates = html.find_all('h4', class_='fixres__header2') # Gets array of fixture dates from h4 tags
+    gamelistList = []
+    for date in gameDates:
+        readableDate = date.get_text()
+        for detail in date.find_next_sibling("div", "fixres__item"):
+            # print(detail)
+            nonReadableDetails = detail.get_text(strip=True)
+            # print(nonReadableDetails)
+            readableDetails = re.split(r"(00|\d\d:\w\w)", nonReadableDetails, maxsplit=2) # This regex seems to work atm. Will see how it holds up
+            # print(readableDetails)
+            if len(readableDetails) < 4:
+                continue
             else:
-                away = "Not in dict"
-            if team_h in teams.keys():
-                home = team_h
-            else:
-                home = "Not in dict"
-            game = "{0} vs {1} on {2} at {3}".format(teams[home], teams[away], kickoffDate, kickoffTime2)
-            print(game)
-            j+=1
-        i+=1
+                readableFixtures = gameListToString(readableDetails, readableDate)
+                print(readableFixtures)
+            # if len(readableDetails)>1:
+                # print(readableDate, readableFixtures)
+        # print({readableDate: detail.get_text(strip=True).split("00") for detail in date.find_next_siblings("div", "fixres__item")})
+        # print(mongodict)
+
+def gameListToString(gameList, date):
+    # example list ['Burnley', '00', '', '20:00', 'Manchester City']
+    # remove element 1 and 2
+    gameList.remove('00')
+    gameList.remove('')
+    string1 = "{}\n{} v {} @ {}".format(date, gameList[0],gameList[2],gameList[1])
+    return string1
+
+def outputGameTeams(games_metadata):
+    print(games_metadata)
+
 if __name__ == "__main__":
-    gameweek = 2
-    main(gameweek)
+    skySportsPageHTML=scrapeContent()
+    games_metadata=gameBreakdown(skySportsPageHTML)
+    # outputGameDetails(games_metadata)
