@@ -1,5 +1,6 @@
 """Standings utilities for Premier League."""
 
+import argparse
 import logging
 from typing import List, Dict, Optional
 
@@ -134,8 +135,44 @@ def get_team_position(team_name: str) -> Optional[int]:
     return None
 
 
+def main() -> None:
+    """Main function for standings CLI."""
+    parser = argparse.ArgumentParser(
+        description="Get Premier League standings",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python -m utils.standings                    # Show full league table
+  python -m utils.standings --team Arsenal     # Show position for a team
+        """
+    )
+    parser.add_argument(
+        "-t", "--team",
+        type=str,
+        metavar="TEAM",
+        help="Get position for a specific team"
+    )
+    parser.add_argument(
+        "-v", "--verbose",
+        action="store_true",
+        help="Enable verbose logging"
+    )
+    
+    args = parser.parse_args()
+    
+    log_level = logging.DEBUG if args.verbose else logging.INFO
+    logging.basicConfig(level=log_level, format='%(levelname)s: %(message)s')
+    
+    if args.team:
+        position = get_team_position(args.team)
+        if position:
+            print(f"\n{args.team} is currently in position {position}")
+        else:
+            print(f"\nTeam '{args.team}' not found")
+    else:
+        print_standings()
+
+
 if __name__ == "__main__":
-    # Example usage
-    logging.basicConfig(level=logging.INFO)
-    print_standings()
+    main()
 

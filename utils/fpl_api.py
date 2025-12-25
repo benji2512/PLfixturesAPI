@@ -138,21 +138,133 @@ class FPLAPIClient:
                 return team
         return None
     
+    def _word_matches(self, word1: str, word2: str) -> bool:
+        """
+        Check if two words match (handles abbreviations and prefixes).
+        
+        Examples:
+        - "man" matches "manchester" (prefix)
+        - "manchester" matches "man" (contains)
+        - "utd" matches "united" (abbreviation)
+        - "united" matches "utd" (contains)
+        - "nott'm" matches "nottingham" (abbreviation with apostrophe)
+        - "nottm" matches "nottingham" (abbreviation)
+        """
+        if word1 == word2:
+            return True
+        
+        # Remove apostrophes and compare
+        word1_clean = word1.replace("'", "").replace("'", "")
+        word2_clean = word2.replace("'", "").replace("'", "")
+        if word1_clean == word2_clean:
+            return True
+        
+        # Check substring match
+        if word1 in word2 or word2 in word1:
+            return True
+        
+        # Check cleaned substring match (handles apostrophes)
+        if word1_clean in word2_clean or word2_clean in word1_clean:
+            return True
+        
+        # Check prefix match
+        if word1.startswith(word2) or word2.startswith(word1):
+            return True
+        
+        # Check cleaned prefix match
+        if word1_clean.startswith(word2_clean) or word2_clean.startswith(word1_clean):
+            return True
+        
+        # Handle common abbreviation patterns
+        # "nott'm" or "nottm" should match "nottingham"
+        # "man" should match "manchester"
+        # "utd" should match "united"
+        # "city" should match "city"
+        
+        # Check if one word is a significant prefix of the other (at least 3 chars)
+        min_len = min(len(word1_clean), len(word2_clean))
+        if min_len >= 3:
+            if word1_clean.startswith(word2_clean[:3]) or word2_clean.startswith(word1_clean[:3]):
+                return True
+        
+        return False
+    
+    def _words_match(self, words1: set[str], words2: set[str]) -> bool:
+        """
+        Check if words from two sets match each other.
+        
+        Returns True if every word in words1 has a matching word in words2,
+        or if every word in words2 has a matching word in words1.
+        """
+        # Check if all words1 match words in words2
+        all_match_1_to_2 = all(
+            any(self._word_matches(w1, w2) for w2 in words2)
+            for w1 in words1
+        )
+        
+        # Check if all words2 match words in words1
+        all_match_2_to_1 = all(
+            any(self._word_matches(w2, w1) for w1 in words1)
+            for w2 in words2
+        )
+        
+        return all_match_1_to_2 or all_match_2_to_1
+    
     def get_team_by_name(self, team_name: str) -> Optional[Team]:
         """
-        Get a team by its name (case-insensitive partial match).
+        Get a team by its name (case-insensitive, supports partial and word matching).
+        
+        Handles both full names and abbreviations bidirectionally:
+        - "Manchester United" matches both "Manchester United" and "Man Utd"
+        - "Man Utd" matches both "Manchester United" and "Man Utd"
         
         Args:
-            team_name: Team name to search for
+            team_name: Team name to search for (e.g., "Manchester United", "Man Utd", "Man United")
             
         Returns:
             Team model or None if not found
         """
         teams = self.get_teams()
-        team_name_lower = team_name.lower()
+        team_name_lower = team_name.lower().strip()
+        team_name_words = set(team_name_lower.split())
+        
+        # First, try exact match (case-insensitive) on both full and short names
+        for team in teams:
+            if team.name.lower() == team_name_lower or team.short_name.lower() == team_name_lower:
+                return team
+        
+        # Second, try substring match in both directions
+        # Check if search term is substring of team name (full or short)
         for team in teams:
             if team_name_lower in team.name.lower() or team_name_lower in team.short_name.lower():
                 return team
+        
+        # Check if team name (full or short) is substring of search term
+        for team in teams:
+            if team.name.lower() in team_name_lower or team.short_name.lower() in team_name_lower:
+                return team
+        
+        # Third, try word-based matching with abbreviation handling
+        for team in teams:
+            team_name_full = team.name.lower()
+            team_short = team.short_name.lower()
+            team_full_words = set(team_name_full.split())
+            team_short_words = set(team_short.split())
+            
+            # Check if search words match team full name words
+            if self._words_match(team_name_words, team_full_words):
+                return team
+            
+            # Check if search words match team short name words
+            if self._words_match(team_name_words, team_short_words):
+                return team
+            
+            # Also check if combining full and short name words helps
+            # (e.g., "Man" from short name + "City" from full name)
+            all_team_words = team_full_words | team_short_words
+            if self._words_match(team_name_words, all_team_words):
+                return team
+        
         return None
     
     def get_gameweeks(self) -> List[Gameweek]:
@@ -230,7 +342,12 @@ class FPLAPIClient:
         """
         team = self.get_team_by_name(team_name)
         if team is None:
-            raise FPLAPIError(f"Team '{team_name}' not found")
+            # Get list of available teams for better error message
+            teams = self.get_teams()
+            team_names = [t.name for t in teams]
+            raise FPLAPIError(
+                f"Team '{team_name}' not found. Available teams: {', '.join(sorted(team_names))}"
+            )
         return self.get_fixtures_for_team(team.id)
 
 
@@ -244,4 +361,15 @@ def get_client() -> FPLAPIClient:
     if _client is None:
         _client = FPLAPIClient()
     return _client
+
+
+def list_all_teams() -> List[Team]:
+    """
+    Get a list of all available teams.
+    
+    Returns:
+        List of all Team models
+    """
+    client = get_client()
+    return client.get_teams()
 

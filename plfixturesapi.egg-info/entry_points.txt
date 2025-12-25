@@ -1,0 +1,2 @@
+[console_scripts]
+fplapi = utils.cli:main

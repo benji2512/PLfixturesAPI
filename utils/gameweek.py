@@ -1,5 +1,6 @@
 """Gameweek utilities for Premier League fixtures."""
 
+import argparse
 import logging
 from typing import Optional, List
 from datetime import datetime
@@ -112,14 +113,77 @@ def print_gameweek_fixtures(gameweek: int) -> None:
         print("-" * 60)
 
 
-if __name__ == "__main__":
-    # Example usage
-    logging.basicConfig(level=logging.INFO)
+def main() -> None:
+    """Main function for gameweek CLI."""
+    parser = argparse.ArgumentParser(
+        description="Get Premier League gameweek information and fixtures",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python -m utils.gameweek                    # Show current gameweek fixtures
+  python -m utils.gameweek --gameweek 5        # Show fixtures for gameweek 5
+  python -m utils.gameweek --current          # Show current gameweek number
+  python -m utils.gameweek --list              # List all gameweeks
+        """
+    )
+    parser.add_argument(
+        "-g", "--gameweek",
+        type=int,
+        metavar="GW",
+        help="Show fixtures for specific gameweek number"
+    )
+    parser.add_argument(
+        "-c", "--current",
+        action="store_true",
+        help="Show current gameweek number only"
+    )
+    parser.add_argument(
+        "-l", "--list",
+        action="store_true",
+        help="List all gameweeks in the season"
+    )
+    parser.add_argument(
+        "-v", "--verbose",
+        action="store_true",
+        help="Enable verbose logging"
+    )
     
-    current_gw = get_current_gameweek_number()
-    if current_gw:
-        print(f"Current gameweek: {current_gw}")
-        print_gameweek_fixtures(current_gw)
+    args = parser.parse_args()
+    
+    log_level = logging.DEBUG if args.verbose else logging.INFO
+    logging.basicConfig(level=log_level, format='%(levelname)s: %(message)s')
+    
+    if args.current:
+        current_gw = get_current_gameweek_number()
+        if current_gw:
+            print(f"Current gameweek: {current_gw}")
+        else:
+            print("No current gameweek found")
+    elif args.list:
+        gameweeks = get_all_gameweeks()
+        print("\nAll Gameweeks in Season:\n")
+        print(f"{'GW':<5} {'Name':<20} {'Finished':<10} {'Current':<10} {'Next':<10}")
+        print("=" * 60)
+        for gw in gameweeks:
+            print(
+                f"{gw.id:<5} "
+                f"{gw.name:<20} "
+                f"{str(gw.finished):<10} "
+                f"{str(gw.is_current):<10} "
+                f"{str(gw.is_next):<10}"
+            )
+    elif args.gameweek:
+        print_gameweek_fixtures(args.gameweek)
     else:
-        print("No current gameweek found")
+        # Default: show current gameweek fixtures
+        current_gw = get_current_gameweek_number()
+        if current_gw:
+            print(f"Current gameweek: {current_gw}")
+            print_gameweek_fixtures(current_gw)
+        else:
+            print("No current gameweek found")
+
+
+if __name__ == "__main__":
+    main()
 

@@ -1,5 +1,6 @@
 """Get full schedule of fixtures for a team."""
 
+import argparse
 import logging
 from typing import Optional
 from datetime import datetime
@@ -68,7 +69,12 @@ def get_team_schedule(team_name: str) -> list[MatchResult]:
     # Get team by name
     team = client.get_team_by_name(team_name)
     if team is None:
-        raise FPLAPIError(f"Team '{team_name}' not found")
+        # Get list of available teams for better error message
+        teams = client.get_teams()
+        team_names = [t.name for t in teams]
+        raise FPLAPIError(
+            f"Team '{team_name}' not found. Available teams: {', '.join(sorted(team_names))}"
+        )
     
     # Get all fixtures for the team
     fixtures = client.get_fixtures_for_team(team.id)
@@ -133,16 +139,54 @@ def print_team_schedule(team_name: str) -> None:
         print(f"Error: {str(e)}")
 
 
-def main(team: str) -> None:
-    """
-    Main function to get and display team schedule.
+def main() -> None:
+    """Main function to get and display team schedule via CLI."""
+    parser = argparse.ArgumentParser(
+        description="Get full schedule of fixtures for a Premier League team",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python -m utils.fullSchedule Arsenal
+  python -m utils.fullSchedule "Manchester United"
+  python -m utils.fullSchedule liverpool
+  python -m utils.fullSchedule --list-teams
+        """
+    )
+    parser.add_argument(
+        "team",
+        type=str,
+        nargs="?",
+        help="Team name (case-insensitive, partial match supported)"
+    )
+    parser.add_argument(
+        "-l", "--list-teams",
+        action="store_true",
+        help="List all available teams"
+    )
+    parser.add_argument(
+        "-v", "--verbose",
+        action="store_true",
+        help="Enable verbose logging"
+    )
     
-    Args:
-        team: Team name
-    """
-    logging.basicConfig(level=logging.INFO)
-    print_team_schedule(team)
+    args = parser.parse_args()
+    
+    log_level = logging.DEBUG if args.verbose else logging.INFO
+    logging.basicConfig(level=log_level, format='%(levelname)s: %(message)s')
+    
+    if args.list_teams:
+        from .fpl_api import list_all_teams
+        teams = list_all_teams()
+        print("\nAvailable Premier League Teams:\n")
+        for team in sorted(teams, key=lambda t: t.name):
+            print(f"  {team.name} (short: {team.short_name})")
+        return
+    
+    if not args.team:
+        parser.error("Team name is required (or use --list-teams to see available teams)")
+    
+    print_team_schedule(args.team)
 
 
 if __name__ == "__main__":
-    main("Arsenal")
+    main()
