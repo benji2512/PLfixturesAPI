@@ -1,3 +1,15 @@
+Metadata-Version: 2.4
+Name: plfixturesapi
+Version: 1.0.0
+Summary: Premier League Fixtures API - Get fixtures, gameweeks, and standings using the free Fantasy Premier League API
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.32.3
+Requires-Dist: pydantic>=2.9.0
+Requires-Dist: python-dateutil>=2.9.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+
 # Premier League Fixtures API  
 
 This API provides up-to-date Premier League fixture details, gameweek information, and standings. It uses the free Fantasy Premier League API as the data source.
